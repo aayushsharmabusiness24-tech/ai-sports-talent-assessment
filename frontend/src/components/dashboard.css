@@ -1,0 +1,64 @@
+/* All classes start with "sd-" so they won't clash with your existing styles. */
+.sd-wrap {
+  --sd-bg: #f2f4f1; --sd-panel: #fff; --sd-ink: #16221d; --sd-mute: #5d6b64;
+  --sd-line: #dde3de; --sd-acc: #2b50d8; --sd-acc-ink: #fff; --sd-soft: #e7ecfb;
+  --sd-good: #1d7a4a; --sd-warn: #b86a00;
+  color: var(--sd-ink);
+  padding: 4px 0;
+}
+@media (prefers-color-scheme: dark) {
+  .sd-wrap {
+    --sd-bg: #121816; --sd-panel: #1b2420; --sd-ink: #eaf0ec; --sd-mute: #9aa9a1;
+    --sd-line: #2c3832; --sd-acc: #7f9bff; --sd-acc-ink: #0d1220; --sd-soft: #232c4a;
+    --sd-good: #5fd196; --sd-warn: #f0b04a;
+  }
+}
+.sd-wrap * { box-sizing: border-box; }
+.sd-muted { color: var(--sd-mute); }
+
+.sd-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 22px; }
+.sd-top h1 { margin: 0; font-size: 26px; font-weight: 800; }
+.sd-top p { margin: 2px 0 0; }
+
+.sd-btn {
+  background: var(--sd-acc); color: var(--sd-acc-ink); border: 0; border-radius: 8px;
+  padding: 10px 18px; font: inherit; font-weight: 800; cursor: pointer;
+}
+.sd-btn:focus-visible, .sd-wrap select:focus-visible { outline: 2px solid var(--sd-acc); outline-offset: 2px; }
+.sd-ghost { background: var(--sd-panel); color: var(--sd-ink); border: 1px solid var(--sd-line); font-weight: 600; padding: 9px 14px; }
+
+.sd-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 16px; }
+.sd-stat { background: var(--sd-panel); border: 1px solid var(--sd-line); border-radius: 12px; padding: 14px 16px; }
+.sd-stat small { color: var(--sd-mute); font-weight: 600; }
+.sd-stat strong { display: block; font-size: 30px; font-weight: 800; line-height: 1.2; }
+
+.sd-panel { background: var(--sd-panel); border: 1px solid var(--sd-line); border-radius: 12px; padding: 16px 18px; margin-bottom: 16px; min-width: 0; }
+.sd-panel h2 { margin: 0 0 10px; font-size: 17px; font-weight: 800; }
+.sd-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.sd-head h2 { margin: 0; }
+.sd-wrap select { background: var(--sd-bg); color: var(--sd-ink); border: 1px solid var(--sd-line); border-radius: 8px; padding: 8px 10px; font: inherit; }
+
+.sd-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sd-insight { background: var(--sd-soft); }
+.sd-up { color: var(--sd-good); font-weight: 800; }
+.sd-down { color: var(--sd-warn); font-weight: 800; }
+
+.sd-list { list-style: none; margin: 0; padding: 0; }
+.sd-list li { display: flex; justify-content: space-between; gap: 10px; padding: 9px 0; border-top: 1px solid var(--sd-line); }
+.sd-list li:first-child { border-top: 0; }
+.sd-list .sd-muted { font-size: 13px; }
+
+.sd-chart { width: 100%; height: auto; display: block; margin-top: 10px; }
+.sd-chart text { fill: var(--sd-mute); font: 600 11px sans-serif; }
+.sd-grid { stroke: var(--sd-line); }
+.sd-line { fill: none; stroke: var(--sd-acc); stroke-width: 2.5; stroke-linejoin: round; }
+.sd-dot { fill: var(--sd-acc); }
+
+@media (max-width: 860px) {
+  .sd-stats { grid-template-columns: 1fr 1fr; }
+  .sd-two { grid-template-columns: 1fr; }
+  .sd-top { flex-wrap: wrap; }
+}
+
+/* Links styled as buttons */
+.sd-link { display: inline-block; text-decoration: none; }

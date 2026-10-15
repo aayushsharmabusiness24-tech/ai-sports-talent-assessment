@@ -1,0 +1,17 @@
+{
+  "name": "ai-sports-talent-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Sports Talent Assessment Platform - React + Express + Python/MediaPipe",
+  "scripts": {
+    "setup": "scripts\\setup.bat",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev": "concurrently -k -n backend,frontend -c blue,green \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

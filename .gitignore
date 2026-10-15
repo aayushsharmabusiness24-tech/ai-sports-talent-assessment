@@ -1,0 +1,26 @@
+# Node
+node_modules/
+dist/
+npm-debug.log*
+
+# Environment
+.env
+backend/.env
+
+# Storage (keep the folder, ignore contents)
+storage/*
+!storage/.gitkeep
+
+# Python
+ai/venv/
+__pycache__/
+*.pyc
+
+# Model file (downloaded by setup.bat)
+ai/model/*.task
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
